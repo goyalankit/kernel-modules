@@ -40,6 +40,14 @@
 
 
 
+/*
+This kernel module simply lists the network devices and shows
+their running status. It uses existing networking apis from 
+https://elixir.bootlin.com/linux/latest/source/include/linux/netdevice.h
+
+
+Note that the this doesn't show network devices in the network namespaces.
+*/
 static int mymodule_init(void)
 {	
 	struct net_device *dev = first_net_device(&init_net);	
